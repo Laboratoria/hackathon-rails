@@ -1,6 +1,6 @@
 # < Shopping >
 
-> Preparando el entorno d etrabajo.
+> Preparando el entorno de trabajo.
 
 1. Descargar de `https://rubyinstaller.org/downloads/` e instalar, la versión **2.4.3-2** de `ruby`.
 
@@ -98,7 +98,17 @@
 
 [railsApp-0]: ./assets/images/Screenshot_20.png
 
-5. Entramos al proyecto con la instruccion `cd my-app` y configuramos `./config/database.yml` con:
+5. Entramos al proyecto con la instrucción `cd my-app` y configuramos `./config/database.yml` con:
+
+```yml
+default: &default
+  adapter: postgresql
+  encoding: utf-8
+  pool: 5
+  username: postgres
+  password: password
+  host: localhost
+```
 
 ![railsApp-1]
 
