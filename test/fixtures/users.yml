@@ -15,6 +15,8 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  profile_id             :integer
+#  profile_type           :string
 #
 # Indexes
 #

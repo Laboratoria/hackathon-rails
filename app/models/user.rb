@@ -15,6 +15,8 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  profile_id             :integer
+#  profile_type           :string
 #
 # Indexes
 #
@@ -27,4 +29,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  VALID_EMAIL_REGEX = /\b[0-9._%a-z\-]+@laboratoria[0-9_a-z]*\.la\z/
+
+  validates :email, presence: true, length: {minimum: 5, maximum: 105},
+            uniqueness: {case_sensitive: false},
+            format: {with: VALID_EMAIL_REGEX}
+  before_save {self.email = email.downcase}
+
+  belongs_to :profile, polymorphic: true
 end
