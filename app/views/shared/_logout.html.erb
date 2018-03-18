@@ -1,0 +1,34 @@
+<% unless current_user.nil? %>
+  <nav>
+    <div class="nav-wrapper teal ">
+      <a href="#" class="brand-logo center">Logo</a>
+      <ul id=" nav-mobile" class="left ">
+        <% if current_user.customer? %>
+          <li>
+            <a href="<%= customer_products_path %>">Products</a>
+          </li>
+        <% elsif current_user.admin? %>
+          <li>
+            <a href="<%= admin_home_index_path %>">Home</a>
+          </li>
+          <li>
+            <a href="<%= admin_categories_path %>">Categories</a>
+          </li>
+          <li>
+            <a href="<%= admin_products_path %>">Products</a>
+          </li>
+        <% end%>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a class="dropdown-button" href="#!" data-activates="dropdown1">
+            <%=current_user.email %>
+          </a>
+        </li>
+        <li>
+          <a href="<%= destroy_user_session_path %>" data-method="delete">Sign out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<% end %>

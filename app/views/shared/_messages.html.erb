@@ -1,0 +1,10 @@
+<% unless notice.blank? %>
+	<input id="notif-type" type="hidden" value="success" />
+	<input id="notif-msg" type="hidden" value="<%= notice %>" />
+	<input id="notif-duration" type="hidden" value="10" />
+<% end %>
+<% unless alert.blank? %>
+	<input id="notif-type" type="hidden" value="alert" />
+	<input id="notif-msg" type="hidden" value="<%= alert %>" />
+	<input id="notif-duration" type="hidden" value="10" />
+<% end %>

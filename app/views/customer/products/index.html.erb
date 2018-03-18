@@ -22,7 +22,7 @@
         <td><%= product.quantity %></td>
         <td><%= product.amount %></td>
         <td><%= product.category.name %></td>
-        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Show', customer_product_path(product) %></td>
       </tr>
     <% end %>
   </tbody>

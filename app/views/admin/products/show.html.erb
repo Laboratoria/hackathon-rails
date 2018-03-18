@@ -22,7 +22,8 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @product.category.name %>
+  <%= @product.category.id %>
 </p>
 
-<%= link_to 'Back', products_path %>
+<%= link_to 'Edit', edit_admin_product_path(@product) %> |
+<%= link_to 'Back', admin_products_path %>

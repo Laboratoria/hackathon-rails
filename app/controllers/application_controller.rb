@@ -3,6 +3,24 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def after_sign_in_path_for(_resource)
+    if current_user.customer?
+      customer_home_index_path
+    elsif current_user.admin?
+      admin_home_index_path
+    end
+  end
+
+  def valid_admin
+    return unless user_signed_in?
+    destroy_session_user unless current_user.admin?
+  end
+
+  def valid_customer
+    return unless user_signed_in?
+    destroy_session_user unless current_user.customer?
+  end
+
   private
 
   def destroy_session_user

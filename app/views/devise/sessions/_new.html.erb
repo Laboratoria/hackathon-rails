@@ -1,0 +1,15 @@
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class:"input-field col s12") do |f| %>
+  <div class="form-inputs">
+    <div class="col s12">
+      <%= f.email_field :email, required: true, autofocus: true, placeholder: "Email", class: "validate" %>
+    </div>
+
+    <div class="col s12">
+      <%= f.password_field :password,  required: true, autofocus: true, placeholder: "Password", class: "validate" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.button :submit, "Log in", class:"col s12 btn btn-large waves-light" %>
+  </div>
+<% end %>

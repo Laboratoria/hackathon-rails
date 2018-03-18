@@ -25,6 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'simple_form', '~> 3.5', '>= 3.5.1'
+gem 'materialize-sass', '~> 1.0.0.alpha4'
+gem 'jquery-ui-rails'
+
+gem 'rubocop', '~> 0.53.0', require: false
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -46,7 +51,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'annotate'  
+  gem 'annotate'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
