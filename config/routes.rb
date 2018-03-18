@@ -76,9 +76,4 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:index, :show]
-  # resources :categories
-  # resources :customers
-  # resources :admins
-
-  # root to: "home#index"
 end
