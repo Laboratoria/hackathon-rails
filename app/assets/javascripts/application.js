@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require alertify.min
 //= require main
-//= require materialize
 //= require turbolinks
+//= require materialize-sprockets
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {

@@ -50,7 +50,7 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     unauthenticated do
-      root 'home#index', as: :unauthenticated_root
+      root 'home#unregistered', as: :unauthenticated_root
     end
   end
 
@@ -70,7 +70,6 @@ Rails.application.routes.draw do
       end
       collection do
         # get :report
-        # get :cash_flow
       end
     end
   end

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shop</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+  <div>
+    <%= render 'shared/navbar' %>
+  </div>
+
+  <%= render 'shared/messages' %>
+
+  <div class="container">
+    <%=yield%>
+  </div>
+
+</body>
+
+</html>

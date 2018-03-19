@@ -1,4 +1,9 @@
 <% unless current_user.nil? %>
+  <ul id="dropdown1" class="dropdown-content">
+    <li>
+      <a href="<%= destroy_user_session_path %>" data-method="delete">Sign out</a>
+    </li>
+  </ul>
   <nav>
     <div class="nav-wrapper teal ">
       <a href="#" class="brand-logo center">Logo</a>
@@ -7,26 +12,24 @@
           <li>
             <a href="<%= customer_products_path %>">Products</a>
           </li>
-        <% elsif current_user.admin? %>
-          <li>
-            <a href="<%= admin_home_index_path %>">Home</a>
-          </li>
-          <li>
-            <a href="<%= admin_categories_path %>">Categories</a>
-          </li>
-          <li>
-            <a href="<%= admin_products_path %>">Products</a>
-          </li>
-        <% end%>
+          <% elsif current_user.admin? %>
+            <li>
+              <a href="<%= admin_home_index_path %>">Home</a>
+            </li>
+            <li>
+              <a href="<%= admin_categories_path %>">Categories</a>
+            </li>
+            <li>
+              <a href="<%= admin_products_path %>">Products</a>
+            </li>
+            <% end%>
       </ul>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li>
           <a class="dropdown-button" href="#!" data-activates="dropdown1">
             <%=current_user.email %>
+              <i class="material-icons right">arrow_drop_down</i>
           </a>
-        </li>
-        <li>
-          <a href="<%= destroy_user_session_path %>" data-method="delete">Sign out</a>
         </li>
       </ul>
     </div>

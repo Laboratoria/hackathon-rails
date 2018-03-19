@@ -25,7 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'simple_form', '~> 3.5', '>= 3.5.1'
-gem 'materialize-sass', '~> 1.0.0.alpha4'
+# gem 'materialize-sass', '~> 1.0.0.alpha4'
+gem 'materialize-sass', '~> 0.100.1'
 gem 'jquery-ui-rails'
 
 gem 'rubocop', '~> 0.53.0', require: false

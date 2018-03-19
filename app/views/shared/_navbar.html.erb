@@ -1,0 +1,20 @@
+<nav>
+  <div class="nav-wrapper teal ">
+    <a href="#" class="brand-logo center">Logo</a>
+    <ul id=" nav-mobile" class="left ">
+      <%= link_to  "Home", unauthenticated_root_path %>
+    </ul>
+    <ul id=" nav-mobile" class="left ">
+        <%= link_to  "Products", products_path %>
+      </ul>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a class="dropdown-button" href="#!" data-activates="dropdown1">
+        </a>
+      </li>
+      <li>
+        <a href="<%= new_user_session_path %>">Sign in</a>
+      </li>
+    </ul>
+  </div>
+</nav>
