@@ -33,8 +33,8 @@ class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\b[0-9._%a-z\-]+@laboratoria[0-9_a-z]*\.la\z/
 
   validates :email, presence: true, length: { minimum: 5, maximum: 105 },
-            uniqueness: { case_sensitive: false },
-            format: { with: VALID_EMAIL_REGEX }
+                    uniqueness: { case_sensitive: false },
+                    format: { with: VALID_EMAIL_REGEX }
   before_save { self.email = email.downcase }
 
   belongs_to :profile, polymorphic: true

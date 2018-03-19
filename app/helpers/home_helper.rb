@@ -1,6 +1,6 @@
 module HomeHelper
   def resource
-    @resource ||= User.new()
+    @resource ||= User.new
   end
 
   def resource_name
