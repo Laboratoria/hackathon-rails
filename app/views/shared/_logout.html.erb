@@ -10,6 +10,9 @@
       <ul id=" nav-mobile" class="left ">
         <% if current_user.customer? %>
           <li>
+            <a href="<%= customer_home_index_path %>">Home</a>
+          </li>
+          <li>
             <a href="<%= customer_products_path %>">Products</a>
           </li>
           <% elsif current_user.admin? %>
