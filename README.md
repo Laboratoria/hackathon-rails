@@ -40,7 +40,7 @@ El primer caso es arkanet.cl, en donde tienen un catálogo y algunos de sus prod
 
 El segundo caso es puntomascotas.cl, pero en su catálogo no tienen productos con receta, por lo que la variedad es muy limitada.
 
-![arkanet](img-readme/arkanet.jpg)
+![arkanet](img-readme/mercado-puntomascotas.jpg)
 
 Existen otras webs de tiendas que venden estos productos, pero sin catálogo. La sección se limita a un texto informativo donde cuentan qué tipo de medicamentos venden, o las marcas o solo los datos de atención de la tienda.
 
@@ -49,3 +49,5 @@ Existen otras webs de tiendas que venden estos productos, pero sin catálogo. La
 ![agromaipo](img-readme/mercado-agromaipo.jpg)
 
 ### Definición del problema
+
+
