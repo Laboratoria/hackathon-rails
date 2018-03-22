@@ -50,4 +50,17 @@ Existen otras webs de tiendas que venden estos productos, pero sin catálogo. La
 
 ### Definición del problema
 
+Los usuarios entrevistados presentaban los siguientes problemas:
+
+* Debían recorrer farmacia por farmacia en busca del medicamento.
+* Muchas veces no encontraban el medicamento porque estaba fuera de stock.
+* Muchas veces al cotizar los precios no los daban por teléfono por lo que se veían obligados a ir presencialmente en su búsqueda.
+* Algunos usuarios tienen mascotas con enfermedades crónicas por lo que continuamente buscan el mejor precio para medicamentos de uso permanente.
+
+Tras lo anterior y sumado a la falta de oferta de venta de medicamentos online, lo cual facilita la obtención rápida...
+
+### Wireframes
+
+![pichichus](img-readme/wireframes.jpg)
+
 
