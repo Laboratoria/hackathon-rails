@@ -1,172 +1,51 @@
 # < Shopping >
 
-> Preparando el entorno de trabajo para el sistema operativo **Windows**.
+## Algunos comandos importantes para Rails y Heroku
 
-> **Nota:** puedes ejecutar la instalación del punto **1** y **2** simultaneamente.
+### Rails
+**Nota:** la consola debe estar en el `./root` del proyecto.
+```sh
+rake -T # genera un listado de tareas
 
-1. Descargar de https://rubyinstaller.org/downloads/ e instalar, la versión **2.4.3-2** de `ruby`.
-> Si usas **Linux** específicamente distribuciones basadas en `Debian` como lo es `Ubuntu`, puedes ver: https://github.com/rvm/ubuntu_rvm, **RVM** es un manejador de versiones de ruby, para más información: https://rvm.io/
+# entre las más importantes:
+rake db:create # crea la base de datos, por lo que debes asegurarte que no exista
+rake db:drop # elimina la base de datos, debes asegurarte de no tener usuarios conectados a la misma
+rake db:migrate # crea el esquema de base de datos, estos son: tablas, relaciones, claves primarias, etc...
+rake db:seed # inyectas data a la base de datos. ./my-app/db/seeds.rb
 
-![rubyInstall-0]
-
-[rubyInstall-0]: ./assets/images/Screenshot_1.png
-
-![rubyInstall-1]
-
-[rubyInstall-1]: ./assets/images/Screenshot_2.png
-
-![rubyInstall-2]
-
-[rubyInstall-2]: ./assets/images/Screenshot_3.png
-
-![rubyInstall-3]
-
-[rubyInstall-3]: ./assets/images/Screenshot_4.png
-
-> Presionamos la tecla **ENTER** para que se instalen los 3 componentes.
-
-![rubyInstall-4]
-
-[rubyInstall-4]: ./assets/images/Screenshot_5.png
-
-> En este punto ya culmino la instalación de `ruby` y sus dependencias con el sistema.
-
-> Verificamos con el comando `ruby -v`.
-
-![rubyInstall-5]
-
-[rubyInstall-5]: ./assets/images/Screenshot_11.png
-
-2. Descargar de `https://www.postgresql.org/download/windows/` e instalar la versión **9.4.17** de `PostgreSQL`. Es un manejador de base de datos relacionales.
-> Si usas **Linux** específicamente distribuciones basadas en `Debian` como lo es `Ubuntu`, puedes ver: https://doc.odoo.com/es/install/linux/postgres/ para complementar.
->
-> Escribe en la terminal:
->>`sudo apt install postgresql postgresql-client
-postgresql-contrib libpq-dev`
->
-> Esto instala el cliente y servidor de la base de datos y algunos scripts de utilería
->
->El paquete `libpq-dev` nos permitirá compilar la gema para **PostgreSQL**.
->
-> Confirma que la instalación terminó adecuadamente:
->
->> `psql --version`
->
-> Para crear un usuario llamado **admin**:
->> sudo su postgres -c psql
->
->> CREATE USER **admin** WITH PASSWORD '**password**';
->
->> ALTER ROLE **admin** WITH CREATEDB;
->
->> `\q`
-
-Continuamos con la instalación en el sistema operativo **Windows**
-
-![pgInstall-0]
-
-[pgInstall-0]: ./assets/images/Screenshot_6.png
-
-![pgInstall-1]
-
-[pgInstall-1]: ./assets/images/Screenshot_7.png
-
-![pgInstall-2]
-
-[pgInstall-2]: ./assets/images/Screenshot_8.png
-
-![pgInstall-2.0]
-
-[pgInstall-2.0]: ./assets/images/Screenshot_8.1.png
-
-![pgInstall-2.1]
-
-[pgInstall-2.1]: ./assets/images/Screenshot_8.2.png
-
-![pgInstall-2.2]
-
-[pgInstall-2.2]: ./assets/images/Screenshot_8.3.png
-
-![pgInstall-3]
-
-[pgInstall-3]: ./assets/images/Screenshot_9.png
-
-![pgInstall-4]
-
-[pgInstall-4]: ./assets/images/Screenshot_10.png
-
-> Al ejecutar **pgAdmin III** verificamos que se haya instalado. Este es nuestro administrador de base de datos.
-
-![pgInstall-5]
-
-[pgInstall-5]: ./assets/images/Screenshot_12.png
-
-3. Instalamos la gema `rails` desde `https://rubygems.org/` con la instrucción `gem install rails -v 4.2.10 --no-ri --no-rdoc` en un **cmd**.
-
-![railsInstall-0]
-
-[railsInstall-0]: ./assets/images/Screenshot_13.png
-
-![railsInstall-1]
-
-[railsInstall-1]: ./assets/images/Screenshot_14.png
-
-![railsInstall-2]
-
-[railsInstall-2]: ./assets/images/Screenshot_15.png
-
-![railsInstall-3]
-
-[railsInstall-3]: ./assets/images/Screenshot_16.png
-
-![railsInstall-4]
-
-[railsInstall-4]: ./assets/images/Screenshot_17.png
-
-> **Nota:** no se te olvide agregar `--no-ri --no-rdoc`.
-
-![railsInstall-5]
-
-[railsInstall-5]: ./assets/images/Screenshot_18.png
-
-> Verificamos con la instrucción `rails -v`.
-
-![railsInstall-6]
-
-[railsInstall-6]: ./assets/images/Screenshot_19.png
-
-4. Ya disponemos de un proyecto al momento de clonar este repositorio, por lo que puedes saltarte este punto.
-
-> Crearemos un proyecto de `rails` con una configuración de base de datos para `PostgreSQL`.
-
-> Con la instrucción `rails new my-app -d postgresql` en un **cmd**.
-
-![railsApp-0]
-
-[railsApp-0]: ./assets/images/Screenshot_20.png
-
-5. Entramos al proyecto con la instrucción `cd name-app` y configuramos `./config/database.yml` con el username y el password de la base de datos correspondiente, `por ejemplo`:
-
-```yml
-default: &default
-  adapter: postgresql
-  encoding: utf-8
-  pool: 5
-  username: postgres
-  password: password
-  host: localhost
+rails s # corre el servidor, por defecto en localhost:3000, puedes usar el flag -p para asignar otro puerto y el flag -b para asignar una ip
+# consulta tu ip con el comando ipconfig (para windows)
+# ejemplo: 
+# rails s -p 3500 -b 192.168.0.14
+# para poder consultar 192.168.0.14:3500/ y ya no sería localhost:3000/
+# y esto para qué? para poder conectarse desde diferentes dispositivos que estén en la misma red, laptops, smartphones, tablets, etc... Ahora tu máquina es un servidor más real
+rails c # abre una terminal de consulta para tus modelos, por ejemplo, puedes hacer consultas como:
+# Admin.all para consultar todos los registros de la tabla admins, la salida es un poco fea, pero tenemos instalada la gema awesome_print que nos ayudara en eso. Solo debemos colocar ap antes de la consulta, ap Admin.all y todo sera más para humanos. Existen otros métodos como find, find_by, find_by_<nombre-columna>, etc...
 ```
+### Heroku
+* Debes tener una cuenta y un proyecto creado en la plataforma primero.
+* Debes instalar [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) y seguir las instrucciones para asociar el usuario.
+```sh
+heroku login
+```
+```sh
+heroku git:remote -a <nombre-proyecto-heroku> # para vincular al proyecto creado en heroku
+# en este punto ya pueden ir a la sección de deploy de su proyecto en heroku y asociar su repositorio github, donde tienen el proyecto rails con los cambios, para que funcione ese despliegue, deben agregar en el archivo Gemfile la gema rails_12factor dentro de un bloque para producción, ejemplo: group :production
+# también es importante agregar la versión de ruby dentro del Gemfile para que heroku sepa cual debe instalar, ejemplo ruby '2.4.3'
+heroku run rake db:migrate # creara el esquema de base de datos en la base de datos de heroku dentro del proyecto
+heroku run rake db:seed # inyectara la data dentro de seeds.rb a la base de datos
+```
+> Quieres limpiar la base de datos?
 
-![railsApp-1]
+```sh
+heroku pg:reset DATABASE # puedes agregar el flag --confirm <nombre-app-heroku> para poder confirmar. Debes correr :migrate otra vez y :seed
+```
+> Quieres monitorear lo que pasa en heroku?
+```sh
+heroku logs --tail
+```
+**Notas:** 
+* En windows las consolas se quedan congeladas y dan la impresión de que el sistema no funciona, nada que un `ENTER` no pueda resolver.
+* Generalmente los `backends` disponemos de varias consolas al mismo tiempo **XD**.
 
-[railsApp-1]: ./assets/images/Screenshot_21.png
-
-> **postgres** es el usuario por defecto con permisos de **Admin**, es recomendable crear uno diferente. Y en `password` debe ir el que configuraste al instalar `PostgreSQL`.
-
-6. Vamos a crear nuestra base de datos con la instrucción `rake db:create` dentro del directorio del proyecto.
-
-7. Con la instrucción `rails s` podremos ver funcionando nuestro servidor en `localhost:3000`.
-
-![railsApp-2]
-
-[railsApp-2]: ./assets/images/Screenshot_22.png
+Éxitos!!!
