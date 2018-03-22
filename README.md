@@ -19,11 +19,11 @@ Pero el XXX% restante prefiere comprar después y cotizar, con el fin de ahorrar
 
 Ante la pregunta "¿Conoces alguna página web dónde cotizar medicamentos online?", un XXXX% respondió negativamente y solo un XX% respondió que sí.
 
-![foto gráfico](img-readme/encuesta-1.jpg)
+![foto gráfico](img-readme/encuesta-2.jpg)
 
 Estos dos factores consideramos que son importantes, ya que es un público no menor el que no puede darse el lujo de perder dinero por no cotizar antes. 
 
-FOTO GRAFICO
+![foto gráfico](img-readme/encuesta-4.jpg)
 
 Existe otro público, más específico, que son los dueños de mascotas que tienen enfermedades específicas y que deben consumir medicamentos de por vida, el que corresponde a un 35,5%. Algunas de estas enermedades mencionadas por los propios afectados son distemper, tumores, artrosis, hipotiroidismo, epilepsia, gingivitis estomatitis, hipertensión, déficit de potasio e insuficiencia cardiaca.
 
@@ -33,10 +33,19 @@ Consultando directamente con Johanna Olavarría, veterinaria, nos comentó que s
 #### Análisis de mercado
 
 Buscando en internet, descubrimos dos casos de venta web de medicamentos, pero ambos tienen sus falencias.
+
 El primer caso es arkanet.cl, en donde tienen un catálogo y algunos de sus productos se venden bajo receta médica. En este caso, para el usuario, el flujo de compra es el tradicional: escoge el producto, lo agrega al carrito, y paga. Y la receta debe ser enviada aparte, vía Whatsapp o por correo electrónico, o sino entregarla en la misma tienda a la hora del retiro.
+
+![arkanet](img-readme/arkanet.jpg)
 
 El segundo caso es puntomascotas.cl, pero en su catálogo no tienen productos con receta, por lo que la variedad es muy limitada.
 
+![arkanet](img-readme/arkanet.jpg)
+
 Existen otras webs de tiendas que venden estos productos, pero sin catálogo. La sección se limita a un texto informativo donde cuentan qué tipo de medicamentos venden, o las marcas o solo los datos de atención de la tienda.
+
+![pichichus](img-readme/mercado-pichichus.jpg)
+![provet](img-readme/mercado-provet.jpg)
+![agromaipo](img-readme/mercado-agromaipo.jpg)
 
 ### Definición del problema
