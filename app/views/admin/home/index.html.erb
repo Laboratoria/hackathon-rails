@@ -1,8 +1,55 @@
-<h1>Home Admin</h1>
 
-<ul>
-  <li><%= link_to "Categories", admin_categories_path %></li>
-  <li><%= link_to "Products", admin_products_path %></li>
-  <li><%= link_to "Customers", admin_customers_path %></li>
-  <li><%= link_to "Customers", admin_customers_path %></li>
-</ul>
+<div class="row">
+  <div class="col s2">
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header">
+          <div class="col s10">Farmacia</div>
+          <div class="col s2"><i class="material-icons right-align">place</i></div>
+        </div>
+        <div class="collapsible-body" style="padding: 0 !important">
+          <div class="collection">
+            <a href="#!" class="collection-item">Alvin</a>
+            <a href="#!" class="collection-item active">Alvin</a>
+            <a href="#!" class="collection-item">Alvin</a>
+            <a href="#!" class="collection-item">Alvin</a>
+            <a href="#!" class="collection-item">Alvin</a>
+            <a href="#!" class="collection-item active">Alvin</a>
+            <a href="#!" class="collection-item">Alvin</a>
+            <a href="#!" class="collection-item">Alvin</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div><%= link_to "Agregar Categorias", admin_categories_path %></div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div><%= link_to "Agregar Producto", admin_products_path %></div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div><%= link_to "Clientes", admin_customers_path %></div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header">
+          <div class="col s10">Contacto</div>
+          <div class="col s2"><i class="material-icons right-align">place</i></div>
+        </div>
+        <div class="collapsible-body" style="padding: 0 !important">
+
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="s10">
+    <div class="row">
+      <div class="col s6"><%= link_to "Categories", admin_categories_path %></div>
+      <div class="col s6"><%= link_to "Products", admin_products_path %></div>
+    </div>
+  </div>
+</div>
