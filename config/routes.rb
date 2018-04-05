@@ -1,48 +1,52 @@
 # == Route Map
 #
-#                   Prefix Verb   URI Pattern                          Controller#Action
-#         new_user_session GET    /users/sign_in(.:format)             devise/sessions#new
-#             user_session POST   /users/sign_in(.:format)             devise/sessions#create
-#     destroy_user_session DELETE /users/sign_out(.:format)            devise/sessions#destroy
-#            user_password POST   /users/password(.:format)            devise/passwords#create
-#        new_user_password GET    /users/password/new(.:format)        devise/passwords#new
-#       edit_user_password GET    /users/password/edit(.:format)       devise/passwords#edit
-#                          PATCH  /users/password(.:format)            devise/passwords#update
-#                          PUT    /users/password(.:format)            devise/passwords#update
-# cancel_user_registration GET    /users/cancel(.:format)              devise/registrations#cancel
-#        user_registration POST   /users(.:format)                     devise/registrations#create
-#    new_user_registration GET    /users/sign_up(.:format)             devise/registrations#new
-#   edit_user_registration GET    /users/edit(.:format)                devise/registrations#edit
-#                          PATCH  /users(.:format)                     devise/registrations#update
-#                          PUT    /users(.:format)                     devise/registrations#update
-#                          DELETE /users(.:format)                     devise/registrations#destroy
-#     unauthenticated_root GET    /                                    home#index
-#      customer_home_index GET    /customer/home(.:format)             customer/home#index
-#         admin_home_index GET    /admin/home(.:format)                admin/home#index
-#          admin_customers GET    /admin/customers(.:format)           admin/customers#index
-#                          POST   /admin/customers(.:format)           admin/customers#create
-#       new_admin_customer GET    /admin/customers/new(.:format)       admin/customers#new
-#      edit_admin_customer GET    /admin/customers/:id/edit(.:format)  admin/customers#edit
-#           admin_customer GET    /admin/customers/:id(.:format)       admin/customers#show
-#                          PATCH  /admin/customers/:id(.:format)       admin/customers#update
-#                          PUT    /admin/customers/:id(.:format)       admin/customers#update
-#                          DELETE /admin/customers/:id(.:format)       admin/customers#destroy
-#         admin_categories GET    /admin/categories(.:format)          admin/categories#index
-#                          POST   /admin/categories(.:format)          admin/categories#create
-#       new_admin_category GET    /admin/categories/new(.:format)      admin/categories#new
-#      edit_admin_category GET    /admin/categories/:id/edit(.:format) admin/categories#edit
-#           admin_category GET    /admin/categories/:id(.:format)      admin/categories#show
-#                          PATCH  /admin/categories/:id(.:format)      admin/categories#update
-#                          PUT    /admin/categories/:id(.:format)      admin/categories#update
-#                          DELETE /admin/categories/:id(.:format)      admin/categories#destroy
-#           admin_products GET    /admin/products(.:format)            admin/products#index
-#                          POST   /admin/products(.:format)            admin/products#create
-#        new_admin_product GET    /admin/products/new(.:format)        admin/products#new
-#       edit_admin_product GET    /admin/products/:id/edit(.:format)   admin/products#edit
-#            admin_product GET    /admin/products/:id(.:format)        admin/products#show
-#                          PATCH  /admin/products/:id(.:format)        admin/products#update
-#                          PUT    /admin/products/:id(.:format)        admin/products#update
-#                          DELETE /admin/products/:id(.:format)        admin/products#destroy
+#                   Prefix Verb   URI Pattern                              Controller#Action
+#         new_user_session GET    /users/sign_in(.:format)                 devise/sessions#new
+#             user_session POST   /users/sign_in(.:format)                 devise/sessions#create
+#     destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
+#            user_password POST   /users/password(.:format)                devise/passwords#create
+#        new_user_password GET    /users/password/new(.:format)            devise/passwords#new
+#       edit_user_password GET    /users/password/edit(.:format)           devise/passwords#edit
+#                          PATCH  /users/password(.:format)                devise/passwords#update
+#                          PUT    /users/password(.:format)                devise/passwords#update
+# cancel_user_registration GET    /users/cancel(.:format)                  devise/registrations#cancel
+#        user_registration POST   /users(.:format)                         devise/registrations#create
+#    new_user_registration GET    /users/sign_up(.:format)                 devise/registrations#new
+#   edit_user_registration GET    /users/edit(.:format)                    devise/registrations#edit
+#                          PATCH  /users(.:format)                         devise/registrations#update
+#                          PUT    /users(.:format)                         devise/registrations#update
+#                          DELETE /users(.:format)                         devise/registrations#destroy
+#     unauthenticated_root GET    /                                        home#unregistered
+#  lab_customer_home_index GET    /lab/customer/home(.:format)             lab/customer/home#index
+#    lab_customer_products GET    /lab/customer/products(.:format)         lab/customer/products#index
+#     lab_customer_product GET    /lab/customer/products/:id(.:format)     lab/customer/products#show
+#     lab_admin_home_index GET    /lab/admin/home(.:format)                lab/admin/home#index
+#      lab_admin_customers GET    /lab/admin/customers(.:format)           lab/admin/customers#index
+#                          POST   /lab/admin/customers(.:format)           lab/admin/customers#create
+#   new_lab_admin_customer GET    /lab/admin/customers/new(.:format)       lab/admin/customers#new
+#  edit_lab_admin_customer GET    /lab/admin/customers/:id/edit(.:format)  lab/admin/customers#edit
+#       lab_admin_customer GET    /lab/admin/customers/:id(.:format)       lab/admin/customers#show
+#                          PATCH  /lab/admin/customers/:id(.:format)       lab/admin/customers#update
+#                          PUT    /lab/admin/customers/:id(.:format)       lab/admin/customers#update
+#                          DELETE /lab/admin/customers/:id(.:format)       lab/admin/customers#destroy
+#     lab_admin_categories GET    /lab/admin/categories(.:format)          lab/admin/categories#index
+#                          POST   /lab/admin/categories(.:format)          lab/admin/categories#create
+#   new_lab_admin_category GET    /lab/admin/categories/new(.:format)      lab/admin/categories#new
+#  edit_lab_admin_category GET    /lab/admin/categories/:id/edit(.:format) lab/admin/categories#edit
+#       lab_admin_category GET    /lab/admin/categories/:id(.:format)      lab/admin/categories#show
+#                          PATCH  /lab/admin/categories/:id(.:format)      lab/admin/categories#update
+#                          PUT    /lab/admin/categories/:id(.:format)      lab/admin/categories#update
+#                          DELETE /lab/admin/categories/:id(.:format)      lab/admin/categories#destroy
+#       lab_admin_products GET    /lab/admin/products(.:format)            lab/admin/products#index
+#                          POST   /lab/admin/products(.:format)            lab/admin/products#create
+#    new_lab_admin_product GET    /lab/admin/products/new(.:format)        lab/admin/products#new
+#   edit_lab_admin_product GET    /lab/admin/products/:id/edit(.:format)   lab/admin/products#edit
+#        lab_admin_product GET    /lab/admin/products/:id(.:format)        lab/admin/products#show
+#                          PATCH  /lab/admin/products/:id(.:format)        lab/admin/products#update
+#                          PUT    /lab/admin/products/:id(.:format)        lab/admin/products#update
+#                          DELETE /lab/admin/products/:id(.:format)        lab/admin/products#destroy
+#                 products GET    /products(.:format)                      products#index
+#                  product GET    /products/:id(.:format)                  products#show
 # 
 
 Rails.application.routes.draw do
@@ -54,25 +58,20 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :customer do
-    resources :home, only: [:index]
-    resources :products, only: [:index, :show]
-  end
+  namespace :lab do
+    namespace :customer do
+      resources :home, only: [:index]
+      resources :products, only: [:index, :show]
+    end
 
-  namespace :admin do
-    resources :home, only: [:index]
+    namespace :admin do
+      resources :home, only: [:index]
 
-    resources :customers
-    resources :categories
-    resources :products do
-      member do
-        # get :report
-      end
-      collection do
-        # get :report
-      end
+      resources :categories
+      resources :products
     end
   end
 
   resources :products, only: [:index, :show]
+  root 'home#unregistered'
 end

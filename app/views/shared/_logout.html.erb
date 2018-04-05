@@ -10,20 +10,20 @@
       <ul id=" nav-mobile" class="left ">
         <% if current_user.customer? %>
           <li>
-            <a href="<%= customer_home_index_path %>">Home</a>
+            <a href="<%= lab_customer_home_index_path %>">Home</a>
           </li>
           <li>
-            <a href="<%= customer_products_path %>">Products</a>
+            <a href="<%= lab_customer_products_path %>">Products</a>
           </li>
           <% elsif current_user.admin? %>
             <li>
-              <a href="<%= admin_home_index_path %>">Home</a>
+              <a href="<%= lab_admin_home_index_path %>">Home</a>
             </li>
             <li>
-              <a href="<%= admin_categories_path %>">Categories</a>
+              <a href="<%= lab_admin_categories_path %>">Categories</a>
             </li>
             <li>
-              <a href="<%= admin_products_path %>">Products</a>
+              <a href="<%= lab_admin_products_path %>">Products</a>
             </li>
             <% end%>
       </ul>

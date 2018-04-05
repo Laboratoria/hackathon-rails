@@ -7,9 +7,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(_resource)
     if current_user.customer?
-      customer_home_index_path
+      lab_customer_home_index_path
     elsif current_user.admin?
-      admin_home_index_path
+      lab_admin_home_index_path
     end
   end
 
